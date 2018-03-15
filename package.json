@@ -1,0 +1,35 @@
+{
+  "name": "rhema",
+  "version": "1.0.0",
+  "description": "Language translation schema for i18n work",
+  "main": "index.js",
+  "scripts": {
+    "build": "WEBPACK_ENV=build webpack",
+    "dev": "WEBPACK_ENV=dev webpack --progress --colors --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisPikul510/rhema.git"
+  },
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "translation",
+    "xml",
+    "cross-platform",
+    "node",
+    "js"
+  ],
+  "author": "Chris Pikul",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ChrisPikul510/rhema/issues"
+  },
+  "homepage": "https://github.com/ChrisPikul510/rhema#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.41",
+    "@babel/preset-env": "^7.0.0-beta.41",
+    "babel-loader": "^7.1.4",
+    "webpack": "^4.1.1"
+  }
+}
