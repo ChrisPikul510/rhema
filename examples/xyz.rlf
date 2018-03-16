@@ -1,0 +1,17 @@
+<?rhema version="1.0" encoding="UTF-8" ?>
+<language xmlns="rhema.100" source="en" target="xyz">
+    <notes>
+        <note>Scrabble note here</note>
+        <note op="chris" time="2018-01-01T12-00-00">Labeled note</note>
+    </notes>
+    <desc>Description of this object; if at root level, describes the file then</desc>
+    <group id="general">
+        <entry id="hello_world">
+            <dataset>
+                <text id="name" sizeMax=128 grammar="proper-noun"  />
+            </dataset>
+            <source>Hello [name]</source>
+            <target>Gjhej [name]</target>
+        </entry>
+    </group>
+</language>

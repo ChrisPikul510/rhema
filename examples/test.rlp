@@ -1,0 +1,7 @@
+<?rhema version="1.0" encoding="UTF-8" ?>
+<project xmlns="rhema.100.project">
+    <files>
+        <base href="./base.rlf" lang="en" />
+        <file href="./xyz.rlf" lang="xyz" />
+    </files>
+</project>

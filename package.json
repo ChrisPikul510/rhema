@@ -4,8 +4,7 @@
   "description": "Language translation schema for i18n work",
   "main": "index.js",
   "scripts": {
-    "build": "WEBPACK_ENV=build webpack",
-    "dev": "WEBPACK_ENV=dev webpack --progress --colors --watch"
+    "dev": "webpack-cli --progress --colors --watch"
   },
   "repository": {
     "type": "git",
@@ -28,8 +27,13 @@
   "homepage": "https://github.com/ChrisPikul510/rhema#readme",
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.41",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.41",
     "@babel/preset-env": "^7.0.0-beta.41",
-    "babel-loader": "^7.1.4",
-    "webpack": "^4.1.1"
+    "babel-loader": "^8.0.0-beta.2",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
+  },
+  "dependencies": {
+    "sax": "^1.2.4"
   }
 }
