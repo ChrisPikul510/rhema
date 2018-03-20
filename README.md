@@ -56,3 +56,30 @@ Exports to JSON as:
     }
 }
 ```
+
+
+## Nodes, and Format
+Each file is prefixed with the XML processor instruction:
+`<?rhema version="1.0" ?>`
+
+### Project file (*.RLP)
+| Element | Required? | Description |
+| :--- | :---: | :--- |
+| `project` | Y | Declares this is a project outline, must be first node |
+| `files` | Y | Starts the list of `file` objects |
+| `base` | Y | Declares the 'base' or master file, inherits from `file`, all attributes apply |
+| `file` |   | Describes the locations and language of a file this project references |
+
+### Translation file (*.RLF)
+| Element | Required? | Description |
+| :--- | :---: | :--- |
+| `language` | Y | Declares this is a language outline, must be first node |
+| `group` |   | Group block of child groups or entries, requires an ID |
+| `entry` |   | Specifies a specific language entry requires an ID |
+| `source` | If no target | The source string, or one to be translated |
+| `target` | If no source | The source string, translated into the target language |
+| `dataset` |   | Groups the data entries for an entry, to help with variables |
+| `text` |   | Data variable of a textual type, can declare it's grammar hint, requires ID |
+| `number` |   | Data variable of a numeric type, requires ID |
+| `notes` |   | A block of notes designed for developer<->translator communication |
+| `desc` |   | Describes it's block, meant as a context explanation |
