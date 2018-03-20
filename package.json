@@ -4,7 +4,8 @@
   "description": "Language translation schema for i18n work",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-cli --progress --colors --watch"
+    "dev": "webpack-cli --progress --colors --watch",
+    "start": "node ./index.js"
   },
   "repository": {
     "type": "git",

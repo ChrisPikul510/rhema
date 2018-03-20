@@ -29,6 +29,9 @@ rhema.parse(data, {})
     })
     .then(() => {
         console.log('Completed loading of project file!');
-        console.log(rhema);
+        return rhema.export();
+    })
+    .then(data => {
+        console.log(data);
     })
     .catch(err => console.error('Error parsing: ', err));

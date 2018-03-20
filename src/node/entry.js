@@ -4,6 +4,7 @@ export default class Entry extends Node {
     _tag = 'entry';
 
     id = '';
+    platform = null;
 
     _source = null;
     _target = null;

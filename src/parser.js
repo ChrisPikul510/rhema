@@ -17,24 +17,26 @@ import * as Nodes from './node'
  * @returns {BaseNode} Sub-class object of BaseNode
  */
 export function NodeFromSAX(node) {
+    var outp;
     switch(node.name) {
-        case 'project': return (new Nodes.Project()).applyFromSAX(node);
-        case 'files': return (new Nodes.Files()).applyFromSAX(node);
-        case 'file': return (new Nodes.File()).applyFromSAX(node);
-        case 'base': return (new Nodes.Base()).applyFromSAX(node);
+        case 'project': outp = (new Nodes.Project()); break;
+        case 'files': outp = (new Nodes.Files()); break;
+        case 'file': outp = (new Nodes.File()); break;
+        case 'base': outp = (new Nodes.Base()); break;
 
-        case 'language': return (new Nodes.Language()).applyFromSAX(node);
-        case 'entry': return (new Nodes.Entry()).applyFromSAX(node);
-        case 'source': return (new Nodes.Source()).applyFromSAX(node);
-        case 'target': return (new Nodes.Target()).applyFromSAX(node);
+        case 'language': outp = (new Nodes.Language()); break;
+        case 'group': outp = (new Nodes.Group()); break;
+        case 'entry': outp = (new Nodes.Entry()); break;
+        case 'source': outp = (new Nodes.Source()); break;
+        case 'target': outp = (new Nodes.Target()); break;
         
         default:
             //Unknown tag types get absorbed as basic Node types
-            const custom = new BaseNode();
-            custom._tag = node.name;
-            custom.applyFromSAX(node);
-            return custom;
+            outp = new BaseNode();
+            outp._tag = node.name;
+            break;
     }
+    return outp ? outp.applyFromSAX(node) : null;
 }
 
 /**

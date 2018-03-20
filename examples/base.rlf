@@ -5,8 +5,8 @@
         <note op="chris" time="2018-01-01T12-00-00">Labeled note</note>
     </notes>
     <desc>Description of this object; if at root level, describes the file then</desc>
-    <group id="general">
-        <entry id="hello_world">
+    <group id="general" platform="all">
+        <entry id="hello_world" platform="ios,android">
             <dataset>
                 <text id="name" sizeMax=128 grammar="proper-noun"  />
             </dataset>

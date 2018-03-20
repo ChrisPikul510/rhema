@@ -5,7 +5,7 @@ export default class Language extends Node {
     _nodes = new Map();
 
     source = '';
-    target = '';
+    target = null;
 
     addNode(node) {
         //We'll keep a dictionary of all the nodes anyways

@@ -1,5 +1,5 @@
 export const Attributes = [
-    "xmlns", "type", "version", "href", "lang", "source", "target"
+    "xmlns", "type", "version", "href", "lang", "source", "target", "platform", "id"
 ];
 
 /**
@@ -37,8 +37,8 @@ export default class Node {
 
     getID() { return this._id; }
     getTag() { return this._tag; }
-    getParentID() { return this._parent; }
-    getChildrenIDs() { return new Array(this._children); }
+    //getParentID() { return this._parent; }
+    //getChildrenIDs() { return new Array(this._children); }
     getContent() { return this._content; }
     getCustomAttributes() { return Object.apply({}, this._customAttrs); }
     getAllAttributes() { 
@@ -80,7 +80,7 @@ export default class Node {
 
     /**
      * Sets the parent of this object
-     * Also carries out the child mapping to the parent by second parameter plag
+     * Also carries out the child mapping to the parent by second parameter
      * @param {Node|number} node New Parent, or parent ID
      * @param {boolean} applyChild If true, set's the children of the parent as well (only if it's a node object)
      */
@@ -100,13 +100,11 @@ export default class Node {
      * @param {boolean} applyParent If true, set's the parent value of new children as well (only if it's a node object)
      */
     addChild(node, applyParent = true) {
-        const nodeId = typeof node === 'number' ? node : node._id;
-        if(nodeId === 0 || nodeId === this._id) return;
-        const exists = this._children.findIndex(i => i === nodeId) !== -1;
+        const exists = this._children.findIndex(i => i._id === node._id) !== -1;
         if(!exists) {
-            this._children.push(nodeId);
+            this._children.push(node);
 
-            if(applyParent && typeof node !== 'number' && node._id)
+            if(applyParent)
                 node.setParent(this, false);
         }
     }
